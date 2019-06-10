@@ -7,10 +7,10 @@ import androidx.room.RoomDatabase
 import com.example.room_library.room.DAO.*
 import com.example.room_library.room.Entities.Proyect
 import com.example.room_library.room.Entities.UserxProyect
-import com.genesis.ecogreen.room.Entities.Comment
-import com.genesis.ecogreen.room.Entities.Task
-import com.genesis.ecogreen.room.Entities.User
-import com.genesis.ecogreen.room.Entities.UserxTask
+import com.genesis.ecogreen.Room.Entities.Comment
+import com.genesis.ecogreen.Room.Entities.Task
+import com.genesis.ecogreen.Room.Entities.User
+import com.genesis.ecogreen.Room.Entities.UserxTask
 
 
 @Database(entities = [Comment::class,Proyect::class,Task::class, User::class,UserxProyect::class,UserxTask::class], version = 3, exportSchema = false)

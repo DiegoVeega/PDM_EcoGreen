@@ -3,9 +3,6 @@ package com.example.room_library.room.Entities
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.genesis.ecogreen.room.Entities.Comment
-import com.genesis.ecogreen.room.Entities.Task
-import com.genesis.ecogreen.room.Entities.User
 
 @Entity(tableName = "Proyect")
 data class Proyect(

@@ -5,8 +5,7 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.example.room_library.room.Entities.Proyect
-import com.genesis.ecogreen.room.Entities.Task
+import com.genesis.ecogreen.Room.Entities.Task
 
 @Dao
 interface TaskDao {

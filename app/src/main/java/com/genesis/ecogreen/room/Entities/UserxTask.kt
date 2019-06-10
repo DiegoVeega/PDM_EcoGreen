@@ -1,10 +1,8 @@
-package com.genesis.ecogreen.room.Entities
+package com.genesis.ecogreen.Room.Entities
 
 import androidx.room.Entity
 import androidx.room.ForeignKey
 import androidx.room.PrimaryKey
-import com.example.room_library.room.Entities.Proyect
-import java.sql.Date
 
 
 @Entity(tableName = "UserxTask",

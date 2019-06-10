@@ -7,7 +7,7 @@ import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import com.example.room_library.room.Entities.Proyect
 import com.example.room_library.room.Entities.UserxProyect
-import com.genesis.ecogreen.room.Entities.User
+import com.genesis.ecogreen.Room.Entities.User
 
 @Dao
 interface UserxProyectDao {

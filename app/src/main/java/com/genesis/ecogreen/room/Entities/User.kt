@@ -1,9 +1,8 @@
-package com.genesis.ecogreen.room.Entities
+package com.genesis.ecogreen.Room.Entities
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import java.sql.Date
 
 
 @Entity(tableName = "User")
