@@ -18,13 +18,15 @@ class EcoRepository(private val CommentDao : CommentDao, private val ProjectDao:
     val AllUsers : LiveData<List<User>> = UserDao.getAllUsers()
     val AllUserxProject : LiveData<List<UserxProject>> = UserxProjectDao.getAllUserxProject()
 
-    val getAllUsersInThisProject : LiveData<List<Project>> = UserxProjectDao.getAllProjectsFromThisUser(String())
-    val getAllProjectsFromThisUser : LiveData<List<User>> = UserxProjectDao.getAllUsersInThisProject(String())
+        //Revisen si esta bien el parametro recibido "String()" tengo algunas dudas.
+        val getAllUsersInThisProject : LiveData<List<Project>> = UserxProjectDao.getAllProjectsFromThisUser(String())
+        val getAllProjectsFromThisUser : LiveData<List<User>> = UserxProjectDao.getAllUsersInThisProject(String())
 
     val getAllUserxTask : LiveData<List<UserxTask>> = UserxTaskDao.getAllUserxTask()
 
-    val getAllUsersInThisTask : LiveData<List<User>> = UserxTaskDao.getAllUsersInThisTask(String())
-    val getAllTasksFromThisUser : LiveData<List<Task>> = UserxTaskDao.getAllTasksFromThisUser(String())
+        //Revisen si esta bien el parametro recibido "String()" tengo algunas dudas.
+        val getAllUsersInThisTask : LiveData<List<User>> = UserxTaskDao.getAllUsersInThisTask(String())
+        val getAllTasksFromThisUser : LiveData<List<Task>> = UserxTaskDao.getAllTasksFromThisUser(String())
 
     //Comment
     @WorkerThread
