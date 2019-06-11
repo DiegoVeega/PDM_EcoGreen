@@ -18,38 +18,41 @@ class EcoRepository(private val CommentDao : CommentDao, private val ProjectDao:
     val AllUsers : LiveData<List<User>> = UserDao.getAllUsers()
     val AllUserxProject : LiveData<List<UserxProject>> = UserxProjectDao.getAllUserxProject()
 
-        //Revisen si esta bien el parametro recibido "String()" tengo algunas dudas.
-        val getAllUsersInThisProject : LiveData<List<Project>> = UserxProjectDao.getAllProjectsFromThisUser(String())
-        val getAllProjectsFromThisUser : LiveData<List<User>> = UserxProjectDao.getAllUsersInThisProject(String())
-
+        //Algunas funciones de tablas cruz se mandan a llamar en otro lado porque necesitan un parametro
     val getAllUserxTask : LiveData<List<UserxTask>> = UserxTaskDao.getAllUserxTask()
 
-        //Revisen si esta bien el parametro recibido "String()" tengo algunas dudas.
-        val getAllUsersInThisTask : LiveData<List<User>> = UserxTaskDao.getAllUsersInThisTask(String())
-        val getAllTasksFromThisUser : LiveData<List<Task>> = UserxTaskDao.getAllTasksFromThisUser(String())
+        //Algunas funciones de tablas cruz se mandan a llamar en otro lado porque necesitan un parametro
 
     //Comment
     @WorkerThread
     suspend fun insert(comment: Comment) {
         CommentDao.insert(comment)
     }
+
     //Project
     @WorkerThread
     suspend fun insert(project: Project) {
         ProjectDao.insert(project)
     }
 
-            //Incluir funciones set de Project Equipo Genesis, </3
-
-
+    fun setProjectDone(name:String){
+        ProjectDao.setProjectDone(name)
+    }
+    fun setProjectDescription(name: String,description:String){
+        ProjectDao.setProjectDescription(name,description)
+    }
+    fun setProjectImage(name: String,image:String){
+        ProjectDao.setProjectImage(name,image)
+    }
 
     //Task
     @WorkerThread
     suspend fun insert(task: Task) {
         TaskDao.insert(task)
     }
-
-            //Incluir funciones set de Project Equipo Genesis, </3
+    fun setTaskDone(name: String){
+        TaskDao.setTaskDone(name)
+    }
 
 
     //User
@@ -63,10 +66,25 @@ class EcoRepository(private val CommentDao : CommentDao, private val ProjectDao:
     suspend fun insert(up: UserxProject) {
         UserxProjectDao.insert(up)
     }
+    fun getAllUsersInThisProject(Projectname:String): LiveData<List<User>>{
+        return UserxProjectDao.getAllUsersInThisProject(Projectname)
+    }
+    fun getAllProjectsFromThisUser(Usermail:String): LiveData<List<Project>>{
+        return UserxProjectDao.getAllProjectsFromThisUser(Usermail)
+    }
+
 
     //UserxTask
     @WorkerThread
     suspend fun insert(ut: UserxTask) {
         UserxTaskDao.insert(ut)
     }
+    fun getAllUsersInThisTask(Taskname:String): LiveData<List<User>>{
+        return UserxTaskDao.getAllUsersInThisTask(Taskname)
+    }
+    fun getAllTasksFromThisUser(Usermail:String): LiveData<List<Task>>{
+        return UserxTaskDao.getAllTasksFromThisUser(Usermail)
+    }
+
+
 }
