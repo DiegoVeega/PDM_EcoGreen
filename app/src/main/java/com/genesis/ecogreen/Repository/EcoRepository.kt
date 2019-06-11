@@ -12,7 +12,7 @@ import com.genesis.ecogreen.Room.Entities.UserxTask
 
 class EcoRepository(private val CommentDao : CommentDao, private val ProjectDao: ProjectDao, private val TaskDao : TaskDao, private val UserDao : UserDao, private val UserxProjectDao : UserxProjectDao, private val UserxTaskDao : UserxTaskDao) {
     //GetAll
-    val AllCommets : LiveData<List<Comment>> = CommentDao.getAllComments()
+    val AllComments : LiveData<List<Comment>> = CommentDao.getAllComments()
     val AllProjects : LiveData<List<Project>> = ProjectDao.getAllProjects()
     val AllTasks : LiveData<List<Task>> = TaskDao.getAllTasks()
     val AllUsers : LiveData<List<User>> = UserDao.getAllUsers()
