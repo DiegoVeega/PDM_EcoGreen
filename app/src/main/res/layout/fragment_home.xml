@@ -80,7 +80,7 @@
                 android:layout_marginRight="2dp"
                 android:layout_toStartOf="@+id/next_button"
                 android:layout_toLeftOf="@+id/next_button"
-                android:text="Login" />
+                android:text="Register" />
 
 
         </RelativeLayout>
