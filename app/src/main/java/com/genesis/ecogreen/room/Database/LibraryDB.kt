@@ -13,8 +13,8 @@ import com.genesis.ecogreen.Room.Entities.User
 import com.genesis.ecogreen.Room.Entities.UserxTask
 
 
-@Database(entities = [Comment::class,Project::class,Task::class, User::class, UserxProject::class,UserxTask::class], version = 4, exportSchema = false)
-public abstract class RoomDatabase: RoomDatabase(){
+@Database(entities = [Comment::class,Project::class,Task::class, User::class, UserxProject::class,UserxTask::class], version = 3, exportSchema = false)
+public abstract class LibraryDB: RoomDatabase(){
 
     abstract fun CommentDao() : CommentDao
     abstract fun ProjectDao() : ProjectDao
@@ -27,14 +27,14 @@ public abstract class RoomDatabase: RoomDatabase(){
 
     companion object {
         @Volatile
-        private var INSTANCE:RoomDatabase? = null
+        private var INSTANCE:LibraryDB? = null
 
-        fun getInstance(Appcontext: Context): RoomDatabase{
+        fun getInstance(Appcontext: Context): LibraryDB{
             val tempInstance = INSTANCE
             if (tempInstance != null) return tempInstance
             synchronized(this){
                 val instance = Room
-                    .databaseBuilder(Appcontext,RoomDatabase::class.java,"Library_DB")
+                    .databaseBuilder(Appcontext,LibraryDB::class.java,"Library_DB")
                     .build()
                 INSTANCE = instance
                 return instance

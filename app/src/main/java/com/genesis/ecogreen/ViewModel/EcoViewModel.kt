@@ -4,7 +4,7 @@ import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.viewModelScope
-import com.example.room_library.room.Database.RoomDatabase
+import com.example.room_library.room.Database.LibraryDB
 import com.example.room_library.room.Entities.Project
 import com.example.room_library.room.Entities.UserxProject
 import com.genesis.ecogreen.Repository.EcoRepository
@@ -24,12 +24,12 @@ class EcoViewModel (app: Application) : AndroidViewModel(app){
     val AllUserxProject: LiveData<List<UserxProject>>
 
     init {
-        val commentDao = RoomDatabase.getInstance(app).CommentDao()
-        val projectDao = RoomDatabase.getInstance(app).ProjectDao()
-        val taskDao = RoomDatabase.getInstance(app).TaskDao()
-        val userDao = RoomDatabase.getInstance(app).UserDao()
-        val userxProjectDao = RoomDatabase.getInstance(app).UserxProjectDao()
-        val userxTaskDao = RoomDatabase.getInstance(app).UserxTaskDao()
+        val commentDao = LibraryDB.getInstance(app).CommentDao()
+        val projectDao = LibraryDB.getInstance(app).ProjectDao()
+        val taskDao = LibraryDB.getInstance(app).TaskDao()
+        val userDao = LibraryDB.getInstance(app).UserDao()
+        val userxProjectDao = LibraryDB.getInstance(app).UserxProjectDao()
+        val userxTaskDao = LibraryDB.getInstance(app).UserxTaskDao()
         Repository = EcoRepository(commentDao, projectDao, taskDao, userDao,userxProjectDao, userxTaskDao)
         AllComments = Repository.AllComments
         AllProjects = Repository.AllProjects
