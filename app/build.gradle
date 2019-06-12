@@ -27,6 +27,9 @@ android {
         pickFirst 'META-INF/atomicfu.kotlin_module'
         pickFirst 'META-INF/kotlinx-coroutines-io.kotlin_module'
     }
+    dataBinding {
+        enabled = true
+    }
 }
 
 dependencies {
@@ -77,6 +80,8 @@ dependencies {
     implementation 'com.google.android.material:material:1.0.0-rc01'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0-rc02'
 
+    //materialdesign
+    api 'com.google.android.material:material:1.1.0-alpha06'
 
 }
 kotlin {

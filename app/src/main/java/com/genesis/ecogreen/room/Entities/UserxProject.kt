@@ -6,7 +6,7 @@ import androidx.room.PrimaryKey
 import com.genesis.ecogreen.Room.Entities.User
 
 @Entity(tableName = "UserxProject",
-    foreignKeys = [
+   /* foreignKeys = [
         ForeignKey(entity = User::class,
         parentColumns = arrayOf("User_mail"),
         childColumns = arrayOf("up_usermail")
@@ -16,11 +16,10 @@ import com.genesis.ecogreen.Room.Entities.User
         parentColumns = arrayOf("Project_name"),
         childColumns = arrayOf("up_projectname")
         )
-    ]
+    ],*/
+    primaryKeys = ["up_usermail","up_projectname"]
 )
 data class UserxProject(
-    @PrimaryKey
     var up_usermail :String,
-    @PrimaryKey
     var up_projectname : String
 )

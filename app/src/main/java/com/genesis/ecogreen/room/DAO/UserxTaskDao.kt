@@ -19,10 +19,10 @@ interface UserxTaskDao {
     @Query("SELECT * FROM UserxTask")
     fun getAllUserxTask(): LiveData<List<UserxTask>>
 
-    @Query("SELECT User_mail,User_name,User_pass,User_type FROM User INNER JOIN UserxTask ON User_mail=ut_usermail WHERE ut_taskname=:Taskname")
+    @Query("SELECT U.* FROM User U INNER JOIN UserxTask ON User_mail=ut_usermail WHERE ut_taskname=:Taskname")
     fun getAllUsersInThisTask(Taskname:String): LiveData<List<User>>
 
-    @Query("SELECT Task_name,Task_creation,Task_completion,Task_done,Task_description FROM Task INNER JOIN UserxTask ON Task_name=ut_taskname WHERE ut_usermail=:Usermail")
+    @Query("SELECT T.* FROM Task T INNER JOIN UserxTask ON Task_name=ut_taskname WHERE ut_usermail=:Usermail")
     fun getAllTasksFromThisUser(Usermail:String): LiveData<List<Task>>
 
 }
