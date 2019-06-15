@@ -6,8 +6,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
 
 import com.genesis.ecogreen.R
+import com.genesis.ecogreen.databinding.FragmentProjectBinding
 
 class projectsFragment : Fragment() {
 
@@ -15,8 +17,8 @@ class projectsFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view:View = inflater.inflate(R.layout.fragment_home, container, false)
-        return view
+        val binding=DataBindingUtil.inflate<FragmentProjectBinding>(inflater,R.layout.fragment_project,container,false)
+        return binding.root
     }
 
 

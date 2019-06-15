@@ -18,22 +18,23 @@
         android:paddingTop="16dp">
 
         <ImageView
-            android:layout_width="64dp"
-            android:layout_height="64dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="48dp"
             android:layout_marginBottom="16dp"
-            app:srcCompat="@drawable/ic_nature_people_black_24dp"
+            app:srcCompat="@mipmap/ic_launcher_round"
             tools:ignore="VectorDrawableCompat" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginBottom="132dp"
-            android:text="Welcome"
-            android:textAllCaps="true"
-            android:textSize="16sp" />
+            android:layout_marginBottom="100dp"
+            android:text="Welcome to EcoGreen"
+            android:textAllCaps="false"
+            android:textSize="18sp"
+            app:fontFamily="sans-serif-light" />
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -42,6 +43,7 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
+                android:id="@+id/username_edit_text"
                 android:layout_height="wrap_content" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -65,21 +67,23 @@
             android:layout_height="wrap_content">
 
             <Button
-                android:id="@+id/next_button"
+                android:id="@+id/login_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:backgroundTint="@color/colorPrimary"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
                 android:text="Login" />
 
             <Button
-                android:id="@+id/backes"
+                android:id="@+id/register_button"
+                android:backgroundTint="@color/colorPrimary"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="2dp"
                 android:layout_marginRight="2dp"
-                android:layout_toStartOf="@+id/next_button"
-                android:layout_toLeftOf="@+id/next_button"
+                android:layout_toStartOf="@+id/login_button"
+                android:layout_toLeftOf="@+id/login_button"
                 android:text="Register" />
 
 

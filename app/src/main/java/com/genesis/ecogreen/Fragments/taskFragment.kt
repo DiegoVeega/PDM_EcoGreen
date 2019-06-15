@@ -15,7 +15,7 @@ class taskFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view:View = inflater.inflate(R.layout.fragment_home, container, false)
+        val view:View = inflater.inflate(R.layout.fragment_login, container, false)
         return view
     }
 

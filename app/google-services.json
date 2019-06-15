@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "820656622404",
+    "firebase_url": "https://ecogreen-cd87f.firebaseio.com",
+    "project_id": "ecogreen-cd87f",
+    "storage_bucket": "ecogreen-cd87f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:820656622404:android:b42b9d838ed6bdd1",
+        "android_client_info": {
+          "package_name": "com.genesis.ecogreen"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "820656622404-fa6cjhj0i6tntkf3juu3rn6e0mut26nq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.genesis.ecogreen",
+            "certificate_hash": "d243cb986dfe807690059486c8a8c223dd2e1596"
+          }
+        },
+        {
+          "client_id": "820656622404-v8fgcv65g26a8ibp268s6mpqald7vkdh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyASM2pCW2fNTeGXxlD3NXpa4fKadQa24mc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "820656622404-v8fgcv65g26a8ibp268s6mpqald7vkdh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
