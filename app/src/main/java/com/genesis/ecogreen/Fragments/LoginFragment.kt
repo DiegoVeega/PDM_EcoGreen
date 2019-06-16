@@ -47,7 +47,7 @@ class LoginFragment : Fragment() {
         return binding.root
 
         //Problem :c
-
+/*
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
             .requestEmail()
             .build()
@@ -56,6 +56,7 @@ class LoginFragment : Fragment() {
             .enableAutoManage(this, this)
             .addApi(Auth.GOOGLE_SIGN_IN_API, gso)
             .build()
+            */
     }
 
     private fun registerlogin(view: View,boolean: Boolean) {
