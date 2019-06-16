@@ -16,15 +16,24 @@ import androidx.databinding.DataBindingUtil
 import androidx.navigation.Navigation
 import com.genesis.ecogreen.databinding.FragmentLoginBinding
 import android.widget.ProgressBar
-
+import com.google.android.gms.common.api.GoogleApiClient
+import com.google.android.gms.auth.api.Auth
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions
+//import android.R
 
 
 
 class LoginFragment : Fragment() {
+
+    private val googleApiClient: GoogleApiClient? = null
+
     private lateinit var mAuth: FirebaseAuth
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
+
+
     ): View? {
         val binding = DataBindingUtil.inflate<FragmentLoginBinding>(inflater,R.layout.fragment_login, container, false)
         mAuth = FirebaseAuth.getInstance()
@@ -36,6 +45,17 @@ class LoginFragment : Fragment() {
         }
 
         return binding.root
+
+        //Problem :c
+
+        val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+            .requestEmail()
+            .build()
+
+        googleApiClient = GoogleApiClient.Builder(this)
+            .enableAutoManage(this, this)
+            .addApi(Auth.GOOGLE_SIGN_IN_API, gso)
+            .build()
     }
 
     private fun registerlogin(view: View,boolean: Boolean) {

@@ -5,7 +5,6 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
 apply plugin: 'kotlin-kapt'
-apply plugin: 'com.google.gms.google-services'
 
 android {
     compileSdkVersion 28
@@ -86,9 +85,11 @@ dependencies {
     //materialdesign
     api 'com.google.android.material:material:1.1.0-alpha06'
 
+    implementation 'com.google.android.gms:play-services-auth:9.0.0'
 }
 kotlin {
     experimental {
         coroutines "enable"
     }
 }
+apply plugin: 'com.google.gms.google-services'
