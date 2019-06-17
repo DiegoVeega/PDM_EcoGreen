@@ -22,6 +22,7 @@ class MainActivity : AppCompatActivity() {
         setUpBottomNavMenu(navController)
         setUpSideNavigationMenu(navController)
         setUpActionBar(navController)
+
         navController.addOnDestinationChangedListener { nc: NavController, nd: NavDestination, args: Bundle? ->
             if (nd.id == nc.graph.startDestination) {
                 bottom_navigation?.visibility=View.GONE
@@ -32,6 +33,14 @@ class MainActivity : AppCompatActivity() {
                 navigation_drawer?.visibility=View.VISIBLE
                 drawer?.setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED)
             }
+
+            if(R.id.projectsFragment==nd.id){
+                supportActionBar?.setHomeButtonEnabled(false)
+                supportActionBar?.setDisplayHomeAsUpEnabled(false)
+                supportActionBar?.setDisplayShowHomeEnabled(false)
+            }else{
+            }
+
         }
 
 

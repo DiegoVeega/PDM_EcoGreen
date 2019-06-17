@@ -12,8 +12,7 @@
         <action
             android:id="@+id/action_loginFragment_to_projectsFragment2"
             app:destination="@id/projectsFragment"
-            app:launchSingleTop="false"
-            app:popUpToInclusive="false" />
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/projectsFragment"

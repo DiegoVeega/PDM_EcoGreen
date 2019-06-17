@@ -17,7 +17,6 @@ import androidx.navigation.Navigation
 import com.genesis.ecogreen.databinding.FragmentLoginBinding
 import android.widget.ProgressBar
 import com.google.android.gms.common.api.GoogleApiClient
-import com.google.android.gms.auth.api.Auth
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 //import android.R
 
@@ -119,81 +118,6 @@ class LoginFragment : Fragment() {
 
 
     }
-    private fun register(view: View) {
 
-        val user=username_edit_text
-        val pass=password_edit_text
-
-        val email = user.getText().toString().trim()
-        val password = pass.getText().toString().trim()
-
-        if (TextUtils.isEmpty(email)) {
-            Toast.makeText(this.context, "Se debe ingresar un email", Toast.LENGTH_LONG).show()
-            return
-        }
-
-        if (TextUtils.isEmpty(password)) {
-            Toast.makeText(this.context, "Falta ingresar la contraseña", Toast.LENGTH_LONG).show()
-            return
-        }
-
-        val pb = (R.id.pbLoading) as ProgressBar
-        pb.visibility = ProgressBar.VISIBLE
-
-        mAuth.createUserWithEmailAndPassword(email, password)
-            .addOnCompleteListener { task ->
-                if (task.isSuccessful) {
-                    Toast.makeText(this.context, "Usuario registrado con exito",
-                        Toast.LENGTH_SHORT).show()
-                    Navigation.findNavController(view).navigate(R.id.action_loginFragment_to_projectsFragment2)
-
-                } else {
-                    Toast.makeText(this.context, task.exception?.message,
-                        Toast.LENGTH_SHORT).show()
-                }
-
-            }
-        pb.visibility = ProgressBar.INVISIBLE
-
-
-    }
-    private fun login(view: View) {
-
-        val user=username_edit_text
-        val pass=password_edit_text
-
-        val email = user.getText().toString().trim()
-        val password = pass.getText().toString().trim()
-
-        if (TextUtils.isEmpty(email)) {
-            Toast.makeText(this.context, "Se debe ingresar un email", Toast.LENGTH_LONG).show()
-            return
-        }
-
-        if (TextUtils.isEmpty(password)) {
-            Toast.makeText(this.context, "Falta ingresar la contraseña", Toast.LENGTH_LONG).show()
-            return
-        }
-
-        val pb = (R.id.pbLoading) as ProgressBar
-        pb.visibility = ProgressBar.VISIBLE
-
-        mAuth.signInWithEmailAndPassword(email, password)
-            .addOnCompleteListener {
-                    if (it.isSuccessful) {
-                        Toast.makeText(this.context, "Bienvenido ",
-                            Toast.LENGTH_SHORT).show()
-                       // val user = mAuth.currentUser
-                        Navigation.findNavController(view).navigate(R.id.action_loginFragment_to_projectsFragment2)
-                    } else {
-                        Toast.makeText(this.context, it.exception?.message,
-                            Toast.LENGTH_SHORT).show()
-                    }
-
-
-            }
-        pb.visibility = ProgressBar.INVISIBLE
-
-    }
 
 }
