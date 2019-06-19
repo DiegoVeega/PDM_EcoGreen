@@ -18,8 +18,7 @@
         android:layout_gravity="bottom|end"
         android:layout_margin="20dp"
         android:backgroundTint="@color/colorAdd"
-        android:src="@drawable/ic_add_black_24dp"
-        tools:targetApi="lollipop"/>
+        android:src="@drawable/ic_add_black_24dp"/>
 
-    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
 </layout>
