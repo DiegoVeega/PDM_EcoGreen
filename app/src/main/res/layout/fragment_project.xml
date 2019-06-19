@@ -2,28 +2,38 @@
 <layout xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-<androidx.constraintlayout.widget.ConstraintLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerview"
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@android:color/darker_gray"
-        />
+        >
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@color/colorGreen"
+                />
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <include
+        android:id="@+id/include"
+        layout="@layout/content_main" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/add_projects"
+        android:id="@+id/add"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="20dp"
-        android:backgroundTint="@color/design_default_color_primary"
-        android:src="@drawable/ic_add_circle_black_24dp"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="339dp"
-        tools:layout_editor_absoluteY="659dp" />
+        android:backgroundTint="@color/colorGreen"
+        android:src="@drawable/ic_add_circle_black_24dp"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
 </layout>
