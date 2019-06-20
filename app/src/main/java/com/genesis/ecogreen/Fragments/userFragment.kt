@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
 
 import com.genesis.ecogreen.R
 
@@ -15,8 +16,8 @@ class userFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view:View = inflater.inflate(R.layout.fragment_login, container, false)
-        return view
+        val binding = DataBindingUtil.inflate<com.genesis.ecogreen.databinding.FragmentUserBinding>(inflater, R.layout.fragment_user, container, false)
+        return binding.root
     }
 
 
