@@ -10,9 +10,8 @@
         android:name="com.genesis.ecogreen.Fragments.LoginFragment"
         android:label="LoginFragment">
         <action
-            android:id="@+id/action_loginFragment_to_projectsFragment2"
-            app:destination="@id/projectsFragment"
-            app:popUpToInclusive="true" />
+            android:id="@+id/action_loginFragment_to_projectsFragment"
+            app:destination="@id/projectsFragment" />
     </fragment>
     <fragment
         android:id="@+id/projectsFragment"

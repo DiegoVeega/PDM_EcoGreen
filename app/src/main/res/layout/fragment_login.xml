@@ -74,6 +74,8 @@
                 android:backgroundTint="@color/colorPrimary"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
+                android:textColor="@color/cardview_light_background"
+
                 android:text="Login" />
 
             <Button
@@ -83,13 +85,20 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="2dp"
                 android:layout_marginRight="2dp"
-                android:layout_toStartOf="@+id/login_button"
-                android:layout_toLeftOf="@+id/login_button"
+                android:textColor="@color/cardview_light_background"
+
                 android:text="Register" />
+
+            <com.facebook.login.widget.LoginButton
+                android:id="@+id/facebook_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="30dp" />
 
 
         </LinearLayout>
-
         <ProgressBar
             android:layout_marginTop="20dp"
             android:layout_gravity="center"
