@@ -89,14 +89,18 @@
 
                 android:text="Register" />
 
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="30dp">
+
             <com.facebook.login.widget.LoginButton
                 android:id="@+id/facebook_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="30dp"
-                android:layout_marginBottom="30dp" />
-
+                android:layout_gravity="center_horizontal" />
 
         </LinearLayout>
         <ProgressBar
