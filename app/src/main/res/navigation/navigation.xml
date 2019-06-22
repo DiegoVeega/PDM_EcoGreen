@@ -12,9 +12,17 @@
         <action
             android:id="@+id/action_loginFragment_to_projectsFragment"
             app:destination="@id/projectsFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_taskFragment"
+            app:destination="@id/tasksFragment" />
     </fragment>
+
     <fragment
         android:id="@+id/projectsFragment"
         android:name="com.genesis.ecogreen.Fragments.projectsFragment"
         android:label="projectsFragment" />
+    <fragment
+        android:id="@+id/tasksFragment"
+        android:name="com.genesis.ecogreen.Fragments.tasksFragment"
+        android:label="tasksFragment" />
 </navigation>
