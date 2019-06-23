@@ -11,7 +11,9 @@ import com.genesis.ecogreen.R
 import com.genesis.ecogreen.Task
 import kotlinx.android.synthetic.main.cardview_tasks.view.*
 
-class taskAdapter (var task : List<Task>, listener:OnItemClickListener) : RecyclerView.Adapter<taskAdapter.ViewHolder>(){
+class taskAdapter (
+    var task : List<Task>,
+    listener:OnItemClickListener) : RecyclerView.Adapter<taskAdapter.ViewHolder>(){
 
     init{
         listener1 = listener
@@ -52,7 +54,7 @@ class taskAdapter (var task : List<Task>, listener:OnItemClickListener) : Recycl
 
         fun bind(item: Task) = with(itemView) {
 
-            Glide.with(itemView.context)
+            Glide.with(task_logo.context)
                 .load(item.image)
                 .into(task_logo)
 
