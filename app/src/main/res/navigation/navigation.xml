@@ -13,7 +13,7 @@
             android:id="@+id/action_loginFragment_to_projectsFragment"
             app:destination="@id/projectsFragment" />
         <action
-            android:id="@+id/action_loginFragment_to_taskFragment"
+            android:id="@+id/action_loginFragment_to_tasksFragment"
             app:destination="@id/tasksFragment" />
         <action
             android:id="@+id/action_loginFragment_to_userFragment"
