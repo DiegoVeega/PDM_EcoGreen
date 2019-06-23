@@ -54,7 +54,6 @@ class taskAdapter (var task : List<Task>, listener:OnItemClickListener) : Recycl
 
             Glide.with(itemView.context)
                 .load(item.image)
-                .placeholder(R.drawable.ic_launcher_background)
                 .into(task_logo)
 
             task_name.text = item.nombre

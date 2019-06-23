@@ -34,7 +34,7 @@ class MainActivity : AppCompatActivity() {
                 drawer?.setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED)
             }
 
-            if(R.id.projectsFragment==nd.id){
+            if(R.id.projectsFragment==nd.id || R.id.tasksFragment==nd.id || R.id.userFragment==nd.id){
                 supportActionBar?.setHomeButtonEnabled(false)
                 supportActionBar?.setDisplayHomeAsUpEnabled(false)
                 supportActionBar?.setDisplayShowHomeEnabled(false)

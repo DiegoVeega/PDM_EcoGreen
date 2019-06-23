@@ -78,9 +78,6 @@ class tasksFragment : Fragment() {
         return view
     }
 
-    override fun onAttach(context: Context) {
-        itemclick = context as item
-        super.onAttach(context)
-    }
+
 
 }
