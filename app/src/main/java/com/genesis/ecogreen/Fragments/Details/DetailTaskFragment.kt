@@ -17,6 +17,16 @@ import androidx.annotation.NonNull
 import androidx.databinding.adapters.TextViewBindingAdapter.setText
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.ValueEventListener
+import androidx.databinding.adapters.NumberPickerBindingAdapter.setValue
+import android.widget.AdapterView
+import android.text.method.TextKeyListener.clear
+import android.widget.ArrayAdapter
+import android.R
+import androidx.databinding.DataBindingUtil.setContentView
+import androidx.recyclerview.widget.RecyclerView
+import com.google.firebase.database.DatabaseReference
+
+
 
 
 
@@ -39,6 +49,7 @@ private const val ARG_PARAM2 = "param2"
  *
  */
 class DetailTaskFragment : Fragment() {
+
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -53,10 +64,10 @@ class DetailTaskFragment : Fragment() {
     }
 
     var ref = FirebaseDatabase.getInstance().reference
-    var nombreRef = ref.child("nombre")
-    var descRef = ref.child("desc")
-    var hechoRef = ref.child("hecho")
-    var imageRef = ref.child("image")
+    var nombreRef = ref.child("ecogreen-cd87f").child("nombre")
+    var descRef = ref.child("ecogreen-cd87f").child("desc")
+    var hechoRef = ref.child("ecogreen-cd87f").child("hecho")
+    var imageRef = ref.child("ecogreen-cd87f").child("image")
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -69,20 +80,26 @@ class DetailTaskFragment : Fragment() {
         val nombre = vista.findViewById<TextView>(com.genesis.ecogreen.R.id.detailNombre)
         val desc = vista.findViewById<TextView>(com.genesis.ecogreen.R.id.detailDesc)
         val hecho = vista.findViewById<Button>(com.genesis.ecogreen.R.id.detailHecho)
-        val image = vista.findViewById<ImageView>(com.genesis.ecogreen.R.id.image)
+        //val image = vista.findViewById<ImageView>(com.genesis.ecogreen.R.id.image)
 
         val bundle: Bundle?=arguments
 
         if(bundle != null){
-/*
+
             val text_nombre = bundle.getString("nombre")
             val text_desc = bundle.getString("descripcion")
             val text_hecho = bundle.getString("No")
-*/
+
+            nombre.text = text_nombre
+            desc.text = text_desc
+            hecho.text = text_hecho
+
+            /*
             nombre.text = nombreRef.toString()
             desc.text = descRef.toString()
             hecho.text = hechoRef.toString()
             image.setImageResource(imageRef.toString().toInt())
+            */
         }
 
 
@@ -140,31 +157,12 @@ class DetailTaskFragment : Fragment() {
         listener = null
     }
 
-    /**
-     * This interface must be implemented by activities that contain this
-     * fragment to allow an interaction in this fragment to be communicated
-     * to the activity and potentially other fragments contained in that
-     * activity.
-     *
-     *
-     * See the Android Training lesson [Communicating with Other Fragments]
-     * (http://developer.android.com/training/basics/fragments/communicating.html)
-     * for more information.
-     */
     interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         fun onFragmentInteraction(uri: Uri)
     }
 
     companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment DetailPartidoFragment.
-         */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =

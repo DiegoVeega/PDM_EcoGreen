@@ -15,6 +15,9 @@
         <action
             android:id="@+id/action_loginFragment_to_taskFragment"
             app:destination="@id/tasksFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_userFragment"
+            app:destination="@id/userFragment" />
     </fragment>
 
     <fragment
@@ -25,4 +28,8 @@
         android:id="@+id/tasksFragment"
         android:name="com.genesis.ecogreen.Fragments.tasksFragment"
         android:label="tasksFragment" />
+    <fragment
+        android:id="@+id/userFragment"
+        android:name="com.genesis.ecogreen.Fragments.userFragment"
+        android:label="userFragment" />
 </navigation>
