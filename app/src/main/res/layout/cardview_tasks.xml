@@ -21,12 +21,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            tools:ignore="MissingConstraints">
+            tools:ignore="MissingConstraints"
+            >
 
             <ImageView
                 android:id="@+id/task_logo"
-                android:layout_width="140dp"
-                android:layout_height="140dp"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
                 android:layout_margin="10dp"
                 />
 

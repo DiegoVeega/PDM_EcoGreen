@@ -65,7 +65,7 @@ class TaskDetail : Fragment() {
                 Glide.with(context)
                     .load(p0.child("image").getValue().toString())
                     .placeholder(R.drawable.ic_launcher_background)
-                    .into(item_image)
+                    .into(detail_image)
                 var nombre: String = p0.child("nombre").getValue().toString()
                 context.apply {
                     detailNombre?.text = nombre
