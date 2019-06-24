@@ -79,6 +79,7 @@
                     android:layout_height="wrap_content"
                     android:paddingLeft="8dp"
                     android:paddingRight="8dp"
+                    android:text="No"
                     android:layout_marginBottom="4dp"
                     />
 
@@ -87,8 +88,8 @@
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Hecho"
-                android:background="@color/colorAdd"/>
+                android:background="@color/colorAdd"
+                android:text="Hecho" />
 
         </LinearLayout>
 
