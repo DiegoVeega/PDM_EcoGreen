@@ -60,6 +60,7 @@ class taskAdapter (
 
             task_name.text = item.nombre
         }
+
     }
 
 }
