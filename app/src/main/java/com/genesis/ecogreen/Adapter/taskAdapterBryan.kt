@@ -4,9 +4,7 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.AdapterView
 import android.widget.ImageView
-import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.navigation.Navigation
@@ -15,7 +13,6 @@ import com.bumptech.glide.Glide
 import com.genesis.ecogreen.Fragments.tasksFragmentDirections
 import com.genesis.ecogreen.R
 import com.genesis.ecogreen.Task
-import kotlinx.android.synthetic.main.cardview_tasks.view.*
 
 class taskAdapterBryan internal constructor(
     context: Context?

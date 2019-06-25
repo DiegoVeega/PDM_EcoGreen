@@ -18,15 +18,12 @@ import androidx.databinding.DataBindingUtil
 import androidx.navigation.Navigation
 import com.genesis.ecogreen.databinding.FragmentLoginBinding
 import android.widget.ProgressBar
-import androidx.annotation.NonNull
 import com.facebook.AccessToken
 import com.facebook.CallbackManager
 import com.facebook.FacebookCallback
 import com.facebook.FacebookException
-import com.facebook.login.LoginManager
 import com.facebook.login.LoginResult
 import com.google.firebase.auth.FacebookAuthProvider
-import java.util.*
 
 //import android.R
 

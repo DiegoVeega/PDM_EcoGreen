@@ -7,28 +7,19 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
-import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.genesis.ecogreen.Adapter.taskAdapter
 import com.genesis.ecogreen.Adapter.taskAdapterBryan
 
 import com.genesis.ecogreen.R
 import com.genesis.ecogreen.Task
 import com.genesis.ecogreen.databinding.FragmentTaskBinding
 import com.google.firebase.database.*
-import kotlinx.android.synthetic.main.cardview_tasks.view.*
 
 class tasksFragment : Fragment() {
 
-
-    interface item {
-        fun nombreItem(nombre: String)
-    }
-
     lateinit var rvtask: RecyclerView
     val taskList: ArrayList<Task> = ArrayList()
-    var itemclick: item? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -39,19 +30,7 @@ class tasksFragment : Fragment() {
 
         rvtask = view.taskRV
 
-        var adapterF = taskAdapter(taskList, object : taskAdapter.OnItemClickListener {
-            override fun onItemClickListener(view: View) {
-                itemclick?.nombreItem(view.task_name.text.toString())
-                /*Navigation.findNavController(view)
-                    .navigate(
-                        tasksFragmentDirections
-                            .actionTasksFragmentToTaskDetail(
-                                view.,
-                                view.,
-                                ))*/
-            }
 
-        })
         var adapterx=taskAdapterBryan(this.context)
 
         rvtask.apply {
