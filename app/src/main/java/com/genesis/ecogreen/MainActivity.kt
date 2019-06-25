@@ -17,7 +17,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
-        val nav=bottom_navigation
          navController = Navigation.findNavController(this, R.id.myNavHostFragment)
         setUpBottomNavMenu(navController)
         setUpActionBar(navController)

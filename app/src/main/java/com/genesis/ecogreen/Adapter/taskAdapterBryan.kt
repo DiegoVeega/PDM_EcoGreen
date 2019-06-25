@@ -1,11 +1,14 @@
 package com.genesis.ecogreen.Adapter
 
 import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
@@ -13,6 +16,14 @@ import com.bumptech.glide.Glide
 import com.genesis.ecogreen.Fragments.tasksFragmentDirections
 import com.genesis.ecogreen.R
 import com.genesis.ecogreen.Task
+import androidx.databinding.adapters.NumberPickerBindingAdapter.setValue
+import com.genesis.ecogreen.Task2
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
+import java.text.SimpleDateFormat
+import java.util.*
+import kotlin.collections.HashMap
+
 
 class taskAdapterBryan internal constructor(
     context: Context?
@@ -25,6 +36,7 @@ class taskAdapterBryan internal constructor(
     inner class taskViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView){
         val logo: ImageView = itemView.findViewById(R.id.task_logo)
         val nombre: TextView = itemView.findViewById(R.id.task_name)
+
         val item: ConstraintLayout = itemView.findViewById(R.id.itemcompleto)
     }
 
@@ -41,7 +53,6 @@ class taskAdapterBryan internal constructor(
             .into(holder.logo)
 
         holder.nombre.text = current.nombre
-
 
         holder.item.setOnClickListener {
             Navigation.findNavController(it)

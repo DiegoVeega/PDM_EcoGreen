@@ -18,12 +18,15 @@ import androidx.databinding.DataBindingUtil
 import androidx.navigation.Navigation
 import com.genesis.ecogreen.databinding.FragmentLoginBinding
 import android.widget.ProgressBar
+import androidx.annotation.NonNull
 import com.facebook.AccessToken
 import com.facebook.CallbackManager
 import com.facebook.FacebookCallback
 import com.facebook.FacebookException
 import com.facebook.login.LoginResult
+import com.genesis.ecogreen.MainActivity
 import com.google.firebase.auth.FacebookAuthProvider
+import com.google.firebase.auth.FirebaseUser
 
 //import android.R
 
@@ -33,7 +36,7 @@ class LoginFragment : Fragment() {
 
     private lateinit var callbackManager: CallbackManager
     private lateinit var mAuth: FirebaseAuth
-    private lateinit var mAuthListener:FirebaseAuth.AuthStateListener
+    private var mAuthListener: FirebaseAuth.AuthStateListener? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -44,6 +47,8 @@ class LoginFragment : Fragment() {
         callbackManager = CallbackManager.Factory.create()
         val binding = DataBindingUtil.inflate<FragmentLoginBinding>(inflater,R.layout.fragment_login, container, false)
         mAuth = FirebaseAuth.getInstance()
+
+
 
         binding.registerButton.setOnClickListener {
             registerlogin(it,true)
@@ -76,7 +81,21 @@ class LoginFragment : Fragment() {
             }
         })
 
+        mAuthListener = FirebaseAuth.AuthStateListener(object : FirebaseAuth.AuthStateListener, (FirebaseAuth) -> Unit {
+            override fun invoke(p1: FirebaseAuth) {
+            }
 
+            override fun onAuthStateChanged(p0: FirebaseAuth) {
+                val user = p0.getCurrentUser()
+                if (user != null){
+                    //Log.i("SESION","secion iniciada  con email : ${user.email}")
+                    Navigation.findNavController(binding.root).navigate(R.id.action_loginFragment_to_projectsFragment)
+                }else{
+                    //Log.i("SESION","secion cerrada 1 ")
+                }
+            }
+
+        })
         return binding.root
 
 
@@ -157,7 +176,18 @@ class LoginFragment : Fragment() {
             }
     }
 
+    override fun onStart() {
+        super.onStart()
+        FirebaseAuth.getInstance().addAuthStateListener(mAuthListener!!)
+    }
 
+    // quitamos el listener cuando se sale del activity
+    override fun onStop() {
+        super.onStop()
+        if (mAuthListener != null){
+            FirebaseAuth.getInstance().removeAuthStateListener(mAuthListener!!)
+        }
+    }
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         callbackManager.onActivityResult(requestCode, resultCode, data)
