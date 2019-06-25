@@ -12,12 +12,6 @@
         <action
             android:id="@+id/action_loginFragment_to_projectsFragment"
             app:destination="@id/projectsFragment" />
-        <action
-            android:id="@+id/action_loginFragment_to_tasksFragment"
-            app:destination="@id/tasksFragment" />
-        <action
-            android:id="@+id/action_loginFragment_to_userFragment"
-            app:destination="@id/userFragment" />
     </fragment>
 
     <fragment
@@ -27,9 +21,27 @@
     <fragment
         android:id="@+id/tasksFragment"
         android:name="com.genesis.ecogreen.Fragments.tasksFragment"
-        android:label="tasksFragment" />
+        android:label="tasksFragment" >
+        <action
+            android:id="@+id/action_tasksFragment_to_taskDetail"
+            app:destination="@id/taskDetail" />
+    </fragment>
     <fragment
         android:id="@+id/userFragment"
         android:name="com.genesis.ecogreen.Fragments.userFragment"
         android:label="userFragment" />
+    <fragment
+        android:id="@+id/taskDetail"
+        android:name="com.genesis.ecogreen.Fragments.Details.TaskDetail"
+        android:label="TaskDetail" >
+        <argument
+            android:name="nombre"
+            app:argType="string" />
+        <argument
+            android:name="desc"
+            app:argType="string" />
+        <argument
+            android:name="image"
+            app:argType="string" />
+    </fragment>
 </navigation>

@@ -15,6 +15,10 @@ class taskAdapter (
     var task : List<Task>,
     listener:OnItemClickListener) : RecyclerView.Adapter<taskAdapter.ViewHolder>(){
 
+    companion object {
+        private var listener1:OnItemClickListener? = null
+    }
+
     init{
         listener1 = listener
     }
@@ -35,9 +39,7 @@ class taskAdapter (
         fun onItemClickListener(view:View)
     }
 
-    companion object {
-        private var listener1:OnItemClickListener? = null
-    }
+
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView), View.OnClickListener{
         override fun onClick(v: View?) {

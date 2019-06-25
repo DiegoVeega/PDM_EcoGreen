@@ -1,16 +1,17 @@
 package com.genesis.ecogreen.Fragments
 
 
-import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.genesis.ecogreen.Adapter.taskAdapter
+import com.genesis.ecogreen.Adapter.taskAdapterBryan
 
 import com.genesis.ecogreen.R
 import com.genesis.ecogreen.Task
@@ -19,15 +20,7 @@ import com.google.firebase.database.*
 import kotlinx.android.synthetic.main.cardview_tasks.view.*
 
 class tasksFragment : Fragment() {
-/*
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        val binding=DataBindingUtil.inflate<FragmentTaskBinding>(inflater,R.layout.fragment_task,container,false)
-        return binding.root
-    }
-*/
+
 
     interface item {
         fun nombreItem(nombre: String)
@@ -42,19 +35,28 @@ class tasksFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        var view = inflater.inflate(R.layout.fragment_task, container, false)
+        var view:FragmentTaskBinding = DataBindingUtil.inflate(inflater,R.layout.fragment_task, container, false)
 
-        rvtask = view.findViewById(R.id.taskRV)
+        rvtask = view.taskRV
 
         var adapterF = taskAdapter(taskList, object : taskAdapter.OnItemClickListener {
             override fun onItemClickListener(view: View) {
                 itemclick?.nombreItem(view.task_name.text.toString())
+                /*Navigation.findNavController(view)
+                    .navigate(
+                        tasksFragmentDirections
+                            .actionTasksFragmentToTaskDetail(
+                                view.,
+                                view.,
+                                ))*/
             }
 
         })
+        var adapterx=taskAdapterBryan(this.context)
+
         rvtask.apply {
             layoutManager = LinearLayoutManager(context)
-            adapter = adapterF
+            adapter = adapterx
             setHasFixedSize(true)
         }
 
@@ -70,12 +72,12 @@ class tasksFragment : Fragment() {
                     var task: Task = snapshot.getValue(Task::class.java)!!
                     taskList.add(task)
                 }
-                adapterF.notifyDataSetChanged()
+                adapterx.setMatches(taskList)
             }
 
         })
 
-        return view
+        return view.root
     }
 
 

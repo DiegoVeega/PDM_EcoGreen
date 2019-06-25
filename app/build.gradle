@@ -8,6 +8,9 @@ apply plugin: 'kotlin-kapt'
 
 apply plugin: 'com.google.gms.google-services'
 
+apply plugin: 'androidx.navigation.safeargs'
+
+
 android {
     compileSdkVersion 28
     defaultConfig {
@@ -81,6 +84,7 @@ dependencies {
     kapt 'com.github.bumptech.glide:compiler:4.9.0'
 
     def nav_version = "2.1.0-alpha04"
+
     //Navigation
     implementation "androidx.navigation:navigation-fragment:$nav_version"
     implementation "androidx.navigation:navigation-ui:$nav_version"
