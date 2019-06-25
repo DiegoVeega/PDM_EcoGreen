@@ -20,18 +20,13 @@ class MainActivity : AppCompatActivity() {
         val nav=bottom_navigation
          navController = Navigation.findNavController(this, R.id.myNavHostFragment)
         setUpBottomNavMenu(navController)
-        setUpSideNavigationMenu(navController)
         setUpActionBar(navController)
 
         navController.addOnDestinationChangedListener { nc: NavController, nd: NavDestination, args: Bundle? ->
             if (nd.id == nc.graph.startDestination) {
                 bottom_navigation?.visibility=View.GONE
-                navigation_drawer?.visibility=View.GONE
-                drawer?.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED)
             } else {
                 bottom_navigation?.visibility=View.VISIBLE
-                navigation_drawer?.visibility=View.VISIBLE
-                drawer?.setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED)
             }
 
             if(R.id.projectsFragment==nd.id || R.id.tasksFragment==nd.id || R.id.userFragment==nd.id){
@@ -47,7 +42,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onSupportNavigateUp(): Boolean {
-        return NavigationUI.navigateUp(Navigation.findNavController(this, R.id.myNavHostFragment), drawer)
+        val navController = Navigation.findNavController(this,R.id.myNavHostFragment)
+        return navController.navigateUp()
     }
 
      private fun setUpBottomNavMenu(navController: NavController){
@@ -56,13 +52,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-     private fun setUpSideNavigationMenu(navController: NavController){
-        navigation_drawer?.let {
-            NavigationUI.setupWithNavController(it, navController)
-        }
-    }
-
     private fun setUpActionBar(navController: NavController){
-        NavigationUI.setupActionBarWithNavController(this, navController, drawer)
+        NavigationUI.setupActionBarWithNavController(this, navController)
     }
 }
