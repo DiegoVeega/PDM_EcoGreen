@@ -1,4 +1,4 @@
-package com.genesis.ecogreen.Fragments.Details
+package com.genesis.ecogreen.Fragments
 
 import android.os.Bundle
 import android.util.Log
@@ -10,8 +10,7 @@ import androidx.databinding.DataBindingUtil
 import com.bumptech.glide.Glide
 
 import com.genesis.ecogreen.R
-import com.genesis.ecogreen.Task
-import com.genesis.ecogreen.Task2
+import com.genesis.ecogreen.Models.Task2
 import com.genesis.ecogreen.databinding.FragmentTaskDetailBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
@@ -27,7 +26,7 @@ class TaskDetail : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val binding = DataBindingUtil.inflate<FragmentTaskDetailBinding>(inflater,R.layout.fragment_task_detail, container, false)
-        val args=TaskDetailArgs.fromBundle(arguments!!)
+        val args= TaskDetailArgs.fromBundle(arguments!!)
         val database = FirebaseDatabase.getInstance()
         val mAuth = FirebaseAuth.getInstance()
         var myRef=database.reference
@@ -67,7 +66,8 @@ class TaskDetail : Fragment() {
 
         //PARA ESCRIBIR EN BASE DE DATOS
         val RutaEscribir=HashMap<String,Any>()
-        val task2 = Task2(args.desc,
+        val task2 = Task2(
+            args.desc,
             args.image,
             args.nombre,
             strDate.toString(),

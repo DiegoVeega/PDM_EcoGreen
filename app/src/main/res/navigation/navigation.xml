@@ -38,7 +38,7 @@
         android:label="userFragment" />
     <fragment
         android:id="@+id/taskDetail"
-        android:name="com.genesis.ecogreen.Fragments.Details.TaskDetail"
+        android:name="com.genesis.ecogreen.Fragments.TaskDetail"
         android:label="TaskDetail" >
         <argument
             android:name="nombre"

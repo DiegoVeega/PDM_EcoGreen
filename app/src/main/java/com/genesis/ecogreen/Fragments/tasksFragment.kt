@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.genesis.ecogreen.Adapter.taskAdapterBryan
 
 import com.genesis.ecogreen.R
-import com.genesis.ecogreen.Task
+import com.genesis.ecogreen.Models.Task
 import com.genesis.ecogreen.databinding.FragmentTaskBinding
 import com.google.firebase.database.*
 

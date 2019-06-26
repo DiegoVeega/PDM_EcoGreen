@@ -4,11 +4,10 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.AdapterView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.genesis.ecogreen.R
-import com.genesis.ecogreen.Task
+import com.genesis.ecogreen.Models.Task
 import kotlinx.android.synthetic.main.cardview_tasks.view.*
 
 class taskAdapter (

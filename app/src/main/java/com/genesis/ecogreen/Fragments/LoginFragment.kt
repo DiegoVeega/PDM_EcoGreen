@@ -36,7 +36,6 @@ class LoginFragment : Fragment() {
 
     private lateinit var callbackManager: CallbackManager
     private lateinit var mAuth: FirebaseAuth
-    private var mAuthListener: FirebaseAuth.AuthStateListener? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -81,21 +80,7 @@ class LoginFragment : Fragment() {
             }
         })
 
-        mAuthListener = FirebaseAuth.AuthStateListener(object : FirebaseAuth.AuthStateListener, (FirebaseAuth) -> Unit {
-            override fun invoke(p1: FirebaseAuth) {
-            }
 
-            override fun onAuthStateChanged(p0: FirebaseAuth) {
-                val user = p0.currentUser
-                if (user != null){
-                    //Log.i("SESION","secion iniciada  con email : ${user.email}")
-                    Navigation.findNavController(binding.root).navigate(R.id.action_loginFragment_to_projectsFragment)
-                }else{
-                    //Log.i("SESION","secion cerrada 1 ")
-                }
-            }
-
-        })
         return binding.root
 
 
@@ -176,18 +161,6 @@ class LoginFragment : Fragment() {
             }
     }
 
-    override fun onStart() {
-        super.onStart()
-        mAuth.addAuthStateListener(mAuthListener!!)
-    }
-
-    // quitamos el listener cuando se sale del activity
-    override fun onStop() {
-        super.onStop()
-        if (mAuthListener != null){
-            mAuth.removeAuthStateListener(mAuthListener!!)
-        }
-    }
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         callbackManager.onActivityResult(requestCode, resultCode, data)

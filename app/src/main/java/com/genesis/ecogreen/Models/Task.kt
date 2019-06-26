@@ -1,4 +1,4 @@
-package com.genesis.ecogreen
+package com.genesis.ecogreen.Models
 
 class Task {
 
