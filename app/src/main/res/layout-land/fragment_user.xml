@@ -12,8 +12,8 @@
         android:layout_gravity="center">
         <ImageView
             android:layout_margin="15dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
             android:src="@drawable/user" />
 
     </LinearLayout>
