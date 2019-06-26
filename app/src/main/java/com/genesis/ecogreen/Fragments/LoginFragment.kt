@@ -86,7 +86,7 @@ class LoginFragment : Fragment() {
             }
 
             override fun onAuthStateChanged(p0: FirebaseAuth) {
-                val user = p0.getCurrentUser()
+                val user = p0.currentUser
                 if (user != null){
                     //Log.i("SESION","secion iniciada  con email : ${user.email}")
                     Navigation.findNavController(binding.root).navigate(R.id.action_loginFragment_to_projectsFragment)
@@ -178,14 +178,14 @@ class LoginFragment : Fragment() {
 
     override fun onStart() {
         super.onStart()
-        FirebaseAuth.getInstance().addAuthStateListener(mAuthListener!!)
+        mAuth.addAuthStateListener(mAuthListener!!)
     }
 
     // quitamos el listener cuando se sale del activity
     override fun onStop() {
         super.onStop()
         if (mAuthListener != null){
-            FirebaseAuth.getInstance().removeAuthStateListener(mAuthListener!!)
+            mAuth.removeAuthStateListener(mAuthListener!!)
         }
     }
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {

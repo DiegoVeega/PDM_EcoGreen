@@ -23,7 +23,7 @@ class projectsFragment : Fragment() {
         val binding=DataBindingUtil.inflate<FragmentProjectBinding>(inflater,R.layout.fragment_project,container,false)
         val mAuth = FirebaseAuth.getInstance()
 
-        Toast.makeText(this.context,mAuth.currentUser?.email.toString(),Toast.LENGTH_LONG).show()
+        Toast.makeText(this.context,mAuth.currentUser?.email,Toast.LENGTH_LONG).show()
         return binding.root
     }
 }

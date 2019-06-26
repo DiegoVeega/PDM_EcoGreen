@@ -6,6 +6,6 @@ class Task2 (
     var nombre : String = "",
     var fecha : String = "",
     var done : String = "",
-    var usuario : String = ""
+    var usuario : String? = ""
 
 )
