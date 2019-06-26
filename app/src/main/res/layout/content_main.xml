@@ -7,11 +7,13 @@
 
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:showIn="@layout/fragment_project">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv1"
+        android:backgroundTint="@color/cardview_light_background"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@android:color/darker_gray"

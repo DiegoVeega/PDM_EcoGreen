@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.adapters.ToolbarBindingAdapter
+import androidx.navigation.Navigation
 
 import com.genesis.ecogreen.R
 import com.genesis.ecogreen.databinding.FragmentProjectBinding
@@ -22,7 +23,9 @@ class projectsFragment : Fragment() {
     ): View? {
         val binding=DataBindingUtil.inflate<FragmentProjectBinding>(inflater,R.layout.fragment_project,container,false)
         val mAuth = FirebaseAuth.getInstance()
-
+        binding.addProject.setOnClickListener {
+            Navigation.findNavController(it).navigate(R.id.action_projectsFragment_to_newFragmentProject)
+        }
         Toast.makeText(this.context,mAuth.currentUser?.email,Toast.LENGTH_LONG).show()
         return binding.root
     }

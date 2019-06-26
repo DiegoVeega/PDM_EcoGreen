@@ -19,7 +19,11 @@
     <fragment
         android:id="@+id/projectsFragment"
         android:name="com.genesis.ecogreen.Fragments.projectsFragment"
-        android:label="projectsFragment" />
+        android:label="projectsFragment" >
+        <action
+            android:id="@+id/action_projectsFragment_to_newFragmentProject"
+            app:destination="@id/newFragmentProject" />
+    </fragment>
     <fragment
         android:id="@+id/tasksFragment"
         android:name="com.genesis.ecogreen.Fragments.tasksFragment"
@@ -44,6 +48,32 @@
             app:argType="string" />
         <argument
             android:name="image"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/newFragmentProject"
+        android:name="com.genesis.ecogreen.Fragments.NewFragmentProject"
+        android:label="NewFragmentProject">
+
+        <action
+            android:id="@+id/action_newFragmentProject_to_projectDetailFragment"
+            app:destination="@id/projectDetailFragment"
+            app:popUpTo="@+id/newFragmentProject"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/projectDetailFragment"
+        android:name="com.genesis.ecogreen.Fragments.projectDetailFragment"
+        android:label="projectDetailFragment" >
+        <argument
+            android:name="nombre"
+            app:argType="string" />
+        <argument android:name="descripcion"
+            app:argType="string" />
+        <argument android:name="objetivo"
+            app:argType="string" />
+        <argument
+            android:name="privado"
             app:argType="string" />
     </fragment>
 </navigation>
