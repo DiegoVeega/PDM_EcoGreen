@@ -12,6 +12,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="soy fragment de user"/>
-
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Log out"
+        android:id="@+id/sign_out_button"/>
 </LinearLayout>
 </layout>

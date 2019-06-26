@@ -9,10 +9,14 @@ import androidx.navigation.NavDestination
 import androidx.navigation.Navigation
 import androidx.navigation.ui.NavigationUI
 import com.genesis.ecogreen.Fragments.projectsFragment
+import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
     private lateinit var navController: NavController
+    private var mAuthListener: FirebaseAuth.AuthStateListener? = null
+    private lateinit var mAuth: FirebaseAuth
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -20,6 +24,13 @@ class MainActivity : AppCompatActivity() {
          navController = Navigation.findNavController(this, R.id.myNavHostFragment)
         setUpBottomNavMenu(navController)
         setUpActionBar(navController)
+        mAuth = FirebaseAuth.getInstance()
+
+        if (mAuth.currentUser != null){
+            navController.navigate(R.id.action_loginFragment_to_projectsFragment)
+        }else{
+        }
+
 
         navController.addOnDestinationChangedListener { nc: NavController, nd: NavDestination, args: Bundle? ->
             if (nd.id == nc.graph.startDestination) {
@@ -54,4 +65,7 @@ class MainActivity : AppCompatActivity() {
     private fun setUpActionBar(navController: NavController){
         NavigationUI.setupActionBarWithNavController(this, navController)
     }
+
+
+
 }
