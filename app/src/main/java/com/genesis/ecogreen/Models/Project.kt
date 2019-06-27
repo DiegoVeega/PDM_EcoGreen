@@ -7,6 +7,6 @@ class Project (
     var creador : String = "",
     var fecha : String = "",
     var tareas : ArrayList<Task2>? = ArrayList(),
-    var private : String,
+    var privado : String,
     var image:String?
 )

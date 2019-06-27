@@ -1,20 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    android:layout_height="wrap_content"
+<androidx.cardview.widget.CardView android:layout_height="wrap_content"
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/item_portrait"
+    app:cardElevation="10dp"
+    app:cardCornerRadius="14dp"
+    app:cardMaxElevation="10dp"
+    app:cardBackgroundColor="@color/colorAccentLight"
+    app:contentPadding="10dp"
+    android:layout_margin="5dp"
     android:layout_width="match_parent">
 
-    <androidx.cardview.widget.CardView
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/item_project"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         xmlns:app="http://schemas.android.com/apk/res-auto"
-        app:cardElevation="10dp"
-        app:cardCornerRadius="14dp"
-        app:cardMaxElevation="10dp"
-        app:cardBackgroundColor="@color/colorAccentLight"
-        app:contentPadding="10dp"
-        android:layout_margin="5dp"
         >
         <LinearLayout
             android:orientation="vertical"
@@ -40,16 +41,10 @@
                     <TextView
                         android:id="@+id/item_name_project"
                         android:text="name"
+                        android:textStyle="bold"
                         android:textSize="20sp"
                         android:gravity="center"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
-                    <TextView
-                        android:id="@+id/item_done_project"
-                        android:text="done"
-                        android:layout_width="match_parent"
-                        android:layout_marginTop="4dp"
-                        android:gravity="center"
                         android:layout_height="wrap_content" />
                     <TextView
                         android:id="@+id/item_creation_project"
@@ -59,8 +54,15 @@
                         android:gravity="center"
                         android:layout_height="wrap_content" />
                     <TextView
-                        android:id="@+id/item_completion_project"
-                        android:text="completion"
+                        android:id="@+id/item_objetivo"
+                        android:text="objetivo"
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="4dp"
+                        android:gravity="center"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:id="@+id/item_privado"
+                        android:text="privado"
                         android:layout_width="match_parent"
                         android:layout_marginTop="4dp"
                         android:gravity="center"
@@ -82,5 +84,5 @@
 
         </LinearLayout>
 
-    </androidx.cardview.widget.CardView>
-</LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>
