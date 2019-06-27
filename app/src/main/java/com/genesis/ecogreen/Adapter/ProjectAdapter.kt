@@ -11,9 +11,8 @@ import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.genesis.ecogreen.Fragments.projectDetailFragment
-import com.genesis.ecogreen.Fragments.tasksFragmentDirections
+import com.genesis.ecogreen.Fragments.projectsFragmentDirections
 import com.genesis.ecogreen.Models.Project
-import com.genesis.ecogreen.Models.Task
 import com.genesis.ecogreen.R
 
 class ProjectAdapter internal constructor(
@@ -28,14 +27,14 @@ class ProjectAdapter internal constructor(
         val nombre: TextView = itemView.findViewById(R.id.item_name_project)
         val desc: TextView = itemView.findViewById(R.id.item_description_project)
 
-        val objetivo = ""
-        val privado = ""
+        val objetivo: TextView = itemView.findViewById(R.id.item_objetivo)
+        val privado: TextView = itemView.findViewById(R.id.item_privado)
 
         val item : ConstraintLayout = itemView.findViewById(R.id.item_project)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): projectViewHolder {
-        val itemView = inflater.inflate(R.layout.cardview_tasks, parent, false)
+        val itemView = inflater.inflate(R.layout.rv_project, parent, false)
         return projectViewHolder(itemView)
     }
 
@@ -48,11 +47,14 @@ class ProjectAdapter internal constructor(
 
         holder.nombre.text = current.nombre
         holder.desc.text = current.descripcion
+        holder.objetivo.text = current.objetivo
+        holder.privado.text = current.privado
 
         holder.item.setOnClickListener {
             Navigation.findNavController(it)
                 .navigate(
-
+                    //Directions
+                    projectsFragmentDirections.ActionProjectsFragmentToProjectDetailFragment
                     (current.nombre,current.descripcion,current.objetivo,current.privado)
                 )
         }

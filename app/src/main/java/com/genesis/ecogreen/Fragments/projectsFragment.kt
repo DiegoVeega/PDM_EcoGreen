@@ -8,18 +8,14 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
-import androidx.databinding.adapters.ToolbarBindingAdapter
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.genesis.ecogreen.Adapter.ProjectAdapter
-import com.genesis.ecogreen.Adapter.taskAdapterBryan
 import com.genesis.ecogreen.Models.Project
-import com.genesis.ecogreen.Models.Task
 
 import com.genesis.ecogreen.R
 import com.genesis.ecogreen.databinding.FragmentProjectBinding
-import com.genesis.ecogreen.databinding.FragmentTaskBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 
