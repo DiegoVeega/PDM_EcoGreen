@@ -9,8 +9,6 @@ import androidx.databinding.DataBindingUtil
 import androidx.navigation.Navigation
 import com.genesis.ecogreen.R
 import com.genesis.ecogreen.databinding.FragmentUserBinding
-import com.genesis.ecogreen.databinding.FragmentUserListBinding
-import com.genesis.ecogreen.databinding.FragmentUserTaskBinding
 
 class taskUserFragment : Fragment(){
 
