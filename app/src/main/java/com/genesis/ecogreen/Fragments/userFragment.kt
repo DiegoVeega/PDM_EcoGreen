@@ -13,6 +13,7 @@ import com.genesis.ecogreen.R
 import com.google.firebase.auth.FirebaseAuth
 import android.content.Intent
 import com.genesis.ecogreen.MainActivity
+import kotlinx.android.synthetic.main.fragment_user.*
 import kotlin.system.exitProcess
 
 
@@ -24,6 +25,7 @@ class userFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        val mAuth = FirebaseAuth.getInstance()
         val binding = DataBindingUtil.inflate<com.genesis.ecogreen.databinding.FragmentUserBinding>(inflater, R.layout.fragment_user, container, false)
         binding.signOutButton.setOnClickListener{
             FirebaseAuth.getInstance().signOut()
@@ -38,6 +40,7 @@ class userFragment : Fragment() {
         binding.btnTaskUsers.setOnClickListener{
             Navigation.findNavController(it).navigate(R.id.action_userFragment_to_taskUserFragment)
         }
+        binding.correoUser.setText(mAuth.currentUser?.email)
         return binding.root
     }
 
