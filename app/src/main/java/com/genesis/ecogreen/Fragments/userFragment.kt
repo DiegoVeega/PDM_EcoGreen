@@ -34,8 +34,9 @@ class userFragment : Fragment() {
             val intent = Intent(this.context, MainActivity::class.java)
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
             startActivity(intent)
-
-
+        }
+        binding.btnTaskUsers.setOnClickListener{
+            Navigation.findNavController(it).navigate(R.id.action_userFragment_to_taskUserFragment)
         }
         return binding.root
     }
