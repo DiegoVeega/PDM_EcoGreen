@@ -54,7 +54,7 @@ class ProjectAdapter internal constructor(
             Navigation.findNavController(it)
                 .navigate(
                     //Directions
-                    projectsFragmentDirections.ActionProjectsFragmentToProjectDetailFragment
+                    projectsFragmentDirections.actionProjectsFragmentToProjectDetailFragment
                     (current.nombre,current.descripcion,current.objetivo,current.privado)
                 )
         }
