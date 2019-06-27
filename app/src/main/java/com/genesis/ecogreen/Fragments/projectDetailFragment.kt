@@ -23,35 +23,20 @@ class projectDetailFragment : Fragment() {
         val binding = DataBindingUtil.inflate<com.genesis.ecogreen.databinding.FragmentDetailsProjectBinding>(inflater, R.layout.fragment_details_project, container, false)
         val args=projectDetailFragmentArgs.fromBundle(arguments!!)
         val mAuth= FirebaseAuth.getInstance()
-        val database = FirebaseDatabase.getInstance()
-        var myRef=database.reference
 
-        //TRAER FECHA ACTUAL
-        val calendar = Calendar.getInstance()
-        val mdformat = SimpleDateFormat("yyyy / MM / dd ")
-        val strDate = mdformat.format(calendar.time)
 
-        val RutaEscribir=HashMap<String,Any>()
-        val proyecto = Project(
-            args.nombre,
-            args.descripcion,
-            args.objetivo,
-            mAuth.currentUser?.email.toString(),
-            strDate,
-            null,
-            args.privado,
-            ""
-        )
+
+
+
 
         binding.projectDetailsName.text=args.nombre
         binding.projectDetailsDescription.text=args.descripcion
         binding.projectDetailsObjetivo.text=args.objetivo
         binding.projectDetailsPrivacy.text=args.privado
-        binding.projectDetailsUserCreator.text=mAuth.currentUser?.email
-        binding.projectDetailsDate.text=strDate
+        binding.projectDetailsUserCreator.text=args.usuario
+        binding.projectDetailsDate.text=args.fecha
 
-        RutaEscribir.put("/Proyectos/${args.nombre}/",proyecto)
-        myRef.updateChildren(RutaEscribir)
+
 
         return binding.root
     }

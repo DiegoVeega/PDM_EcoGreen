@@ -38,13 +38,12 @@ class projectsFragment : Fragment() {
             Navigation.findNavController(it).navigate(R.id.action_projectsFragment_to_projectDetailFragment)
         }
         Toast.makeText(this.context,mAuth.currentUser?.email,Toast.LENGTH_LONG).show()
-        return binding.root
 
-        var view: FragmentProjectBinding = DataBindingUtil.inflate(inflater,R.layout.fragment_project, container, false)
 
-        rvproject = view.rv1
+        rvproject = binding.rv1
 
-        var adapterx= ProjectAdapter(this.context)
+
+        var adapterx=ProjectAdapter(this.context)
 
         rvproject.apply {
             layoutManager = LinearLayoutManager(context)
@@ -69,7 +68,7 @@ class projectsFragment : Fragment() {
 
         })
 
-        return view.root
+        return binding.root
     }
 
 }

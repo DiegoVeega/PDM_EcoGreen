@@ -82,6 +82,12 @@
         <argument
             android:name="privado"
             app:argType="string" />
+        <argument
+            android:name="fecha"
+            app:argType="string" />
+        <argument
+            android:name="usuario"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/taskUserFragment"

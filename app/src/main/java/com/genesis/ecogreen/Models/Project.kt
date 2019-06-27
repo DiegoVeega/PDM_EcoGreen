@@ -4,9 +4,8 @@ class Project (
     var nombre : String = "",
     var descripcion : String = "",
     var objetivo : String = "",
-    var creador : String = "",
-    var fecha : String = "",
-    var tareas : ArrayList<Task2>? = ArrayList(),
-    var privado : String,
-    var image:String?
+    var creador : String? = "",
+    var fecha : String? = "",
+    var privado : String="",
+    var image:String?=""
 )
