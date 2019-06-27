@@ -59,6 +59,7 @@
             android:textSize="20sp"
             android:layout_gravity="center"/>
         <ImageButton
+            android:id="@+id/btn_taskUsers"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_list_black_24dp"

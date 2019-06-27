@@ -35,7 +35,11 @@
     <fragment
         android:id="@+id/userFragment"
         android:name="com.genesis.ecogreen.Fragments.userFragment"
-        android:label="userFragment" />
+        android:label="userFragment" >
+        <action
+            android:id="@+id/action_userFragment_to_taskUserFragment"
+            app:destination="@id/taskUserFragment" />
+    </fragment>
     <fragment
         android:id="@+id/taskDetail"
         android:name="com.genesis.ecogreen.Fragments.TaskDetail"
@@ -76,4 +80,8 @@
             android:name="privado"
             app:argType="string" />
     </fragment>
+    <fragment
+        android:id="@+id/taskUserFragment"
+        android:name="com.genesis.ecogreen.Fragments.taskUserFragment"
+        android:label="taskUserFragment" />
 </navigation>
