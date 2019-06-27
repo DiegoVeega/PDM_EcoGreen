@@ -30,6 +30,22 @@
                 android:scaleType="centerCrop"/>
 
             <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/item_name_project"
+                    android:text="name"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal">
@@ -38,35 +54,60 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:orientation="vertical">
-                    <TextView
-                        android:id="@+id/item_name_project"
-                        android:text="name"
-                        android:textStyle="bold"
-                        android:textSize="20sp"
-                        android:gravity="center"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
+
                     <TextView
                         android:id="@+id/item_creation_project"
                         android:text="creation"
+                        android:textSize="13sp"
                         android:layout_width="match_parent"
                         android:layout_marginTop="4dp"
-                        android:gravity="center"
                         android:layout_height="wrap_content" />
-                    <TextView
-                        android:id="@+id/item_objetivo"
-                        android:text="objetivo"
-                        android:layout_width="match_parent"
-                        android:layout_marginTop="4dp"
-                        android:gravity="center"
-                        android:layout_height="wrap_content" />
-                    <TextView
-                        android:id="@+id/item_privado"
-                        android:text="privado"
-                        android:layout_width="match_parent"
-                        android:layout_marginTop="4dp"
-                        android:gravity="center"
-                        android:layout_height="wrap_content" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:textStyle="bold"
+                            android:text="Objetivo: "
+                            android:layout_width="match_parent"
+                            android:layout_marginTop="4dp"
+                            android:gravity="center"
+                            android:layout_height="wrap_content" />
+
+                        <TextView
+                            android:id="@+id/item_objetivo"
+                            android:text="objetivo"
+                            android:layout_width="match_parent"
+                            android:layout_marginTop="4dp"
+                            android:gravity="center"
+                            android:layout_height="wrap_content" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:text="Privado: "
+                            android:layout_width="match_parent"
+                            android:layout_marginTop="4dp"
+                            android:gravity="center"
+                            android:textStyle="bold"
+                            android:layout_height="wrap_content" />
+
+                        <TextView
+                            android:id="@+id/item_privado"
+                            android:text="privado"
+                            android:layout_width="match_parent"
+                            android:layout_marginTop="4dp"
+                            android:gravity="center"
+                            android:layout_height="wrap_content" />
+
+                    </LinearLayout>
 
 
                 </LinearLayout>
@@ -77,7 +118,7 @@
                     android:layout_width="match_parent"
                     android:layout_marginTop="4dp"
                     android:layout_weight="1"
-                    android:gravity="center"
+                    android:gravity="right"
                     android:layout_height="match_parent"
                     />
             </LinearLayout>

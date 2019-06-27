@@ -25,10 +25,6 @@ class projectDetailFragment : Fragment() {
         val mAuth= FirebaseAuth.getInstance()
 
 
-
-
-
-
         binding.projectDetailsName.text=args.nombre
         binding.projectDetailsDescription.text=args.descripcion
         binding.projectDetailsObjetivo.text=args.objetivo
