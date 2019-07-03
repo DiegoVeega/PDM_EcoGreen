@@ -20,7 +20,7 @@ class chatAdapter internal constructor(
 
     inner class chatViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         val foto: ImageView = itemView.findViewById(R.id.chat_logo)
-        val nombre: TextView = itemView.findViewById(R.id.user_name)
+        val nombre: TextView = itemView.findViewById(R.id.user_name_chat)
         val descrp: TextView = itemView.findViewById(R.id.description_message)
     }
 

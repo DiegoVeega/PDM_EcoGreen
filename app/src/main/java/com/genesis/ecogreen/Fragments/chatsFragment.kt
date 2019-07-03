@@ -18,17 +18,21 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import com.xwray.groupie.Item
 import com.xwray.groupie.ViewHolder
+import kotlinx.android.synthetic.main.cardview_chats.view.*
 
 class chatsFragment : Fragment() {
     lateinit var rvchat: RecyclerView
     val chatList: ArrayList<Chat> = ArrayList()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        val mAuth = FirebaseAuth.getInstance()
         val binding = DataBindingUtil.inflate<FragmentChatBinding>(inflater, R.layout.fragment_chat, container, false)
 
         binding.rvchats.setOnClickListener{
             Navigation.findNavController(it).navigate(R.id.action_chatsFragment_to_users_chat_fragment)
         }
+         //Aqui es donde se supone deberia asignar el nombre de los usuarios pero da error
+        /*binding.rvchats.user_name_chat.setText(mAuth.currentUser?.email)*/
 
         rvchat = binding.rvchats
 
