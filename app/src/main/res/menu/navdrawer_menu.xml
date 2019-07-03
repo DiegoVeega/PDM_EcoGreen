@@ -13,4 +13,8 @@
         android:id="@+id/userFragment"
         android:icon="@drawable/ic_person_black_24dp"
         android:title="User" />
+    <item
+        android:id="@+id/chatFragment"
+        android:icon="@drawable/icon_chat"
+        android:title="Chats"/>
 </menu>

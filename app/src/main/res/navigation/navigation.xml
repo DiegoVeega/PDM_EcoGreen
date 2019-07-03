@@ -93,4 +93,16 @@
         android:id="@+id/taskUserFragment"
         android:name="com.genesis.ecogreen.Fragments.taskUserFragment"
         android:label="taskUserFragment" />
+    <fragment
+        android:id="@+id/chatsFragment"
+        android:name="com.genesis.ecogreen.Fragments.chatsFragment"
+        android:label="chatsFragment" >
+        <action
+            android:id="@+id/action_chatsFragment_to_users_chat_fragment"
+            app:destination="@id/users_chat_fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/users_chat_fragment"
+        android:name="com.genesis.ecogreen.Fragments.users_chat_fragment"
+        android:label="users_chat_fragment" />
 </navigation>
