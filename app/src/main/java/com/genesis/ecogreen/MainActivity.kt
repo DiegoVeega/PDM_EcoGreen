@@ -13,7 +13,10 @@ import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_main.*
 import android.widget.Toast
 import android.R.attr.orientation
+import android.content.Intent
 import android.content.res.Configuration
+import android.view.Menu
+import android.view.MenuItem
 
 
 class MainActivity : AppCompatActivity() {
@@ -54,6 +57,22 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+        when(item?.itemId){
+            R.id.menu_new_message ->{
+                val intent = Intent(this, NewMessageActivity::class.java)
+                startActivity(intent)
+            }
+        }
+
+        return super.onOptionsItemSelected(item)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.navdrawer_menu, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
     override fun onSupportNavigateUp(): Boolean {
         val navController = Navigation.findNavController(this,R.id.myNavHostFragment)
         return navController.navigateUp()
@@ -84,4 +103,8 @@ class MainActivity : AppCompatActivity() {
         super.onConfigurationChanged(newConfig)
         flag=1
     }
+}
+
+class User(val uid: String, val username: String, val profileImageUrl: String){
+    constructor() : this("", "", "")
 }
