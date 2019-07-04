@@ -62,7 +62,7 @@ class ProjectAdapter internal constructor(
                         .navigate(
                             //Directions
                             projectsFragmentDirections.actionProjectsFragmentToProjectDetailFragment
-                                (current.nombre,current.descripcion,current.objetivo,current.privado,current.fecha.toString(),current.creador.toString())
+                                (current.nombre,current.descripcion,current.objetivo,current.privado,current.fecha.toString(),current.creador.toString(),current.image.toString())
                         )
                 }else{
                     Toast.makeText(contexto,"Usted no tiene acceso a este proyecto",Toast.LENGTH_SHORT).show()
@@ -72,7 +72,7 @@ class ProjectAdapter internal constructor(
                     .navigate(
                         //Directions
                         projectsFragmentDirections.actionProjectsFragmentToProjectDetailFragment
-                            (current.nombre,current.descripcion,current.objetivo,current.privado,current.fecha.toString(),current.creador.toString())
+                            (current.nombre,current.descripcion,current.objetivo,current.privado,current.fecha.toString(),current.creador.toString(),current.image.toString())
                     )
             }
 

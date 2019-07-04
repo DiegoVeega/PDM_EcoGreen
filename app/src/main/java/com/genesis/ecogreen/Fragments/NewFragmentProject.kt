@@ -82,7 +82,7 @@ class NewFragmentProject : Fragment() {
                     user,
                     strDate,
                     option,
-                    ""
+                    "https://firebasestorage.googleapis.com/v0/b/ecogreen-cd87f.appspot.com/o/forest.png?alt=media&token=26d8ab28-7a86-4227-ad1f-a43cca9a396e"
                 )
                 val contexto=this.context
                 myRef.child("/Proyectos/${binding.projectName.text.toString()}").addValueEventListener(object :
@@ -107,7 +107,8 @@ class NewFragmentProject : Fragment() {
                                             binding.projectObjetivo.text.toString(),
                                             option,
                                             strDate,
-                                            user.toString()
+                                            user.toString(),
+                                            "https://firebasestorage.googleapis.com/v0/b/ecogreen-cd87f.appspot.com/o/forest.png?alt=media&token=26d8ab28-7a86-4227-ad1f-a43cca9a396e"
                                         )
                                 )
                         }

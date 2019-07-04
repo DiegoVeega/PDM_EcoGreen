@@ -30,7 +30,6 @@ class MainActivity : AppCompatActivity() {
         setUpBottomNavMenu(navController)
         setUpActionBar(navController)
         mAuth = FirebaseAuth.getInstance()
-
         flag=0
 
 

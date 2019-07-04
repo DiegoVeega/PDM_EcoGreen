@@ -33,11 +33,11 @@ class chatAdapter internal constructor(
         val current = chats[position]
 
         Glide.with(holder.foto.context)
-            .load(current.img)
+            .load(current.user)
             .into(holder.foto)
 
-        holder.nombre.text = current.nombre
-        holder.descrp.text = current.desp
+        holder.nombre.text = current.user
+        holder.descrp.text = current.message
     }
 
     internal fun setMatches(tasks: List<Chat>){

@@ -31,8 +31,6 @@ class chatsFragment : Fragment() {
         binding.rvchats.setOnClickListener{
             Navigation.findNavController(it).navigate(R.id.action_chatsFragment_to_users_chat_fragment)
         }
-         //Aqui es donde se supone deberia asignar el nombre de los usuarios pero da error
-        /*binding.rvchats.user_name_chat.setText(mAuth.currentUser?.email)*/
 
         rvchat = binding.rvchats
 
